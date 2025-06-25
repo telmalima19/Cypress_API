@@ -1,19 +1,14 @@
 describe('Teste API', () => {
   it('Criar Usuarios', () => {
-        cy.api({
-      method:'POST',
-      url:'https://serverest.dev/usuarios',
-      body:  { 
-        "email": "tsese54twedw2wwww2q25e1iippxqtzax2@1gmail.com",
-        "nome": "testeasds1jkxoaqt",
-        "password": "teste",
-        "administrador": "true"
-        }
-    }).then((response)=>{
+    cy.fixture('usuario').then(function(usuario){ 
+      const user = usuario.body_usuario
+    cy.criar_usuario(user)
+        }).then((response)=>{
       expect(response.status).to.eq(201)
       expect (response.body.message).to.eq('Cadastro realizado com sucesso')
       Cypress.env('id',response.body._id)
-})
+   })     
+
   })
   it('Buscar Usuario', () => {
     cy.api({
@@ -32,7 +27,7 @@ describe('Teste API', () => {
       url:`https://serverest.dev/usuarios/${Cypress.env('id')}`,
       body:{
         "nome":"axsw",
-        "email": "tes22teaiippxaaa@agmail.com",
+        "email": "teas2s2teaiippxaaa@agmail.com",
         "password": "teste",
         "administrador": "true"
       }
@@ -55,5 +50,4 @@ describe('Teste API', () => {
 
   })
   })
-})
-
+ })

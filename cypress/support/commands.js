@@ -4,6 +4,6 @@ Cypress.Commands.add('criar_usuario',(user)=>{
       url:'https://serverest.dev/usuarios',
       body: user
       
-  })
-})
 
+})
+})
