@@ -11,23 +11,28 @@ describe('Teste API', () => {
 
   })
   it('Buscar Usuario', () => {
-    cy.api({
-      method:'GET',
-      url:`https://serverest.dev/usuarios/${Cypress.env('id')}`
-      
-    }).then((response)=>{
+   const id = Cypress.env('id')
+    cy.buscar_usuario(id)
+      .then((response)=>{
+      expect(response.status).to.eq(200)
+        
+  })
+  })
+  it('Listar Usuario', () => {
+      const id = ''
+    cy.buscar_usuario(id)
+      .then((response)=>{
       expect(response.status).to.eq(200)
 
   })
   })
-   
   it('Atualizar Usuario', () => {
     cy.api({
       method:'PUT',
       url:`https://serverest.dev/usuarios/${Cypress.env('id')}`,
       body:{
-        "nome":"axsw",
-        "email": "teas2s2teaiippxaaa@agmail.com",
+        "nome":"telma lima qa",
+        "email": "telma.lima.qa@gmail.com.br",
         "password": "teste",
         "administrador": "true"
       }
