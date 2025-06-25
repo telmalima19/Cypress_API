@@ -1,4 +1,4 @@
-name: Curso Github Actions + Cypress
+name: CypressAPI
 
 on:
   push:
@@ -27,5 +27,3 @@ jobs:
       # Executa os testes em Cypress
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        with:
-          start: npx cypress run
