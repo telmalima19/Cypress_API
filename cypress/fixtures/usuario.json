@@ -1,9 +1,14 @@
 {
-  "body_usuario":
-   { 
-        "email": "telma.lima.qa@gmail.com.br",
-        "nome": "telma lima",
-        "password": "teste",
-        "administrador": "true"
-        }
+  "body_usuario": {
+    "email": "telma.lima@gmail.com.br",
+    "nome": "telma lima",
+    "password": "teste",
+    "administrador": "true"
+  },
+  "atualizar_usuario": {
+    "email": "telma.lima.qa@gmail.com.br",
+    "nome": "telma lima qa",
+    "password": "teste",
+    "administrador": "true"
+  }
 }

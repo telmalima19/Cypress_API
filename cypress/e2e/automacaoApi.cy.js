@@ -27,16 +27,9 @@ describe('Teste API', () => {
   })
   })
   it('Atualizar Usuario', () => {
-    cy.api({
-      method:'PUT',
-      url:`https://serverest.dev/usuarios/${Cypress.env('id')}`,
-      body:{
-        "nome":"telma lima qa",
-        "email": "telma.lima.qa@gmail.com.br",
-        "password": "teste",
-        "administrador": "true"
-      }
-      
+    cy.fixture('usuario').then(function(usuario){ 
+      const atualiza = usuario.atualizar_usuario
+    cy.criar_usuario(atualiza)         
     }).then((response)=>{
       expect(response.status).to.eq(200)
       expect(response.body.message).to.eq('Registro alterado com sucesso')
