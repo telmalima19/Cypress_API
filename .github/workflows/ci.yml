@@ -1,0 +1,31 @@
+name: Curso Github Actions + Cypress
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+
+    steps:
+      # Faz o checkout do codigo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Configurar o Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Instala as dependencias do projeto
+      - name: Instalar dependencias
+        run: npm install
+
+      # Executa os testes em Cypress
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          start: npx cypress run
