@@ -25,4 +25,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           build: npm ci
-          start: npm
+          start: npx cypress run
