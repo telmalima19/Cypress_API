@@ -18,3 +18,11 @@ Cypress.Commands.add("criar_usuario", (atualiza) => {
       body:atualiza,
   }).then((response)=>{return response})
 })
+Cypress.Commands.add("criar_produto", (cadastro) => {
+  cy.api({
+    method: "POST",
+    url: "https://serverest.dev/produtos",
+    body: cadastro,
+    headers:{authorization: Cypress.env('token')} 
+  }).then((response)=>{return response})
+})

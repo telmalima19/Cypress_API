@@ -25,7 +25,7 @@ describe('Teste API', () => {
       expect(response.status).to.eq(200)
 
   })
-  })
+  })   
   it('Atualiza Usuário', () => {
     cy.fixture('usuario').then(function(usuario){ 
       const atualiza = usuario.atualizar_usuario
@@ -36,6 +36,7 @@ describe('Teste API', () => {
 
   })
   })
+ 
 
     it('Realiza login no sistema', () => {
     cy.fixture('usuario').then(function(usuario) {
@@ -48,11 +49,34 @@ describe('Teste API', () => {
       }}).then((response) => {
         expect(response.status).to.eq(200)
         expect(response.body.message).to.eq('Login realizado com sucesso')
-        Cypress.env('token', response.body.autorization)
+        Cypress.env('token', response.body.authorization)
       
     })
   })
   })
+    it('Cadstro Produto', () => {
+    cy.fixture("produto").then(function(produto) {
+      const cadastro = produto.body_produto
+      cy.criar_produto(cadastro).then((response) => {
+        expect(response.status).to.eq(201)
+        expect(response.body.message).to.eq('Cadastro realizado com sucesso')
+        Cypress.env('idProduto', response.body._id)
+      })
+    })
+  }) 
+  it('Exclui produto', () => {
+    cy.api({
+      method:'DELETE',
+      url:`https://serverest.dev/produtos/${Cypress.env('idProduto')}`,
+      headers:{authorization: Cypress.env('token')}
+      
+    }).then((response)=>{
+      expect(response.status).to.eq(200)
+      expect(response.body.message).to.eq('Registro excluído com sucesso')
+
+  })
+  })
+
   it('Exclui Usuário', () => {
     cy.api({
       method:'DELETE',
@@ -65,5 +89,6 @@ describe('Teste API', () => {
 
   })
   })
+ 
+ 
  }) 
-  
