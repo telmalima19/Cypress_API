@@ -64,6 +64,23 @@ describe('Teste API', () => {
       })
     })
   }) 
+  it('Listar Produto', () => {
+    cy.api({
+      method: "GET",
+      url: 'https://serverest.dev/produtos/',
+    }).then((response)=>{
+        expect(response.status).to.eq(200) 
+      })
+})
+
+  it('Busca produto po ID', () => {
+    cy.api({
+      method: "GET",
+      url: `https://serverest.dev/produtos/${Cypress.env('idProduto')}`,
+    }).then((response)=>{
+        expect(response.status).to.eq(200) 
+      })
+})
   it('Exclui produto', () => {
     cy.api({
       method:'DELETE',
@@ -92,3 +109,4 @@ describe('Teste API', () => {
  
  
  }) 
+ 

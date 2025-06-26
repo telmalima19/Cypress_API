@@ -26,3 +26,9 @@ Cypress.Commands.add("criar_produto", (cadastro) => {
     headers:{authorization: Cypress.env('token')} 
   }).then((response)=>{return response})
 })
+Cypress.Commands.add("buscar_produto", (id) => {
+  cy.api({
+    method: "GET",
+    url: `https://serverest.dev/produtos/` + idProduto,
+  }).then((response)=>{return response})
+})
