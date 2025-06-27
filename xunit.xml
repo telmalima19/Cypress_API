@@ -1,0 +1,12 @@
+<testsuite name="Mocha Tests" tests="10" failures="0" errors="0" skipped="0" timestamp="Fri, 27 Jun 2025 21:53:02 GMT" time="2.715">
+<testcase classname="Teste API" name="Criar Usu&#xE1;rio" time="0.495"/>
+<testcase classname="Teste API" name="Busca Usu&#xE1;rio po ID" time="0.225"/>
+<testcase classname="Teste API" name="Lista Usu&#xE1;rio" time="0.272"/>
+<testcase classname="Teste API" name="Atualiza Usu&#xE1;rio" time="0.236"/>
+<testcase classname="Teste API" name="Realiza login no sistema" time="0.226"/>
+<testcase classname="Teste API" name="Cadstro Produto" time="0.244"/>
+<testcase classname="Teste API" name="Listar Produto" time="0.237"/>
+<testcase classname="Teste API" name="Busca produto po ID" time="0.204"/>
+<testcase classname="Teste API" name="Exclui produto" time="0.205"/>
+<testcase classname="Teste API" name="Exclui Usu&#xE1;rio" time="0.203"/>
+</testsuite>
