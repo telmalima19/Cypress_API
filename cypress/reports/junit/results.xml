@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.203" tests="10" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-06-27T23:12:37" tests="0" file="cypress\e2e\automacaoApi.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Teste API" timestamp="2025-06-27T23:12:37" tests="10" time="3.177" failures="0">
+    <testcase name="Teste API Criar Usuário" time="0.590" classname="Criar Usuário">
+    </testcase>
+    <testcase name="Teste API Busca Usuário po ID" time="0.237" classname="Busca Usuário po ID">
+    </testcase>
+    <testcase name="Teste API Lista Usuário" time="0.351" classname="Lista Usuário">
+    </testcase>
+    <testcase name="Teste API Atualiza Usuário" time="0.230" classname="Atualiza Usuário">
+    </testcase>
+    <testcase name="Teste API Realiza login no sistema" time="0.298" classname="Realiza login no sistema">
+    </testcase>
+    <testcase name="Teste API Cadstro Produto" time="0.256" classname="Cadstro Produto">
+    </testcase>
+    <testcase name="Teste API Listar Produto" time="0.257" classname="Listar Produto">
+    </testcase>
+    <testcase name="Teste API Busca produto po ID" time="0.255" classname="Busca produto po ID">
+    </testcase>
+    <testcase name="Teste API Exclui produto" time="0.221" classname="Exclui produto">
+    </testcase>
+    <testcase name="Teste API Exclui Usuário" time="0.257" classname="Exclui Usuário">
+    </testcase>
+  </testsuite>
+</testsuites>
